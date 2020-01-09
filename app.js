@@ -1,15 +1,18 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const generate = require("./lib/generate");
+
+const HTML = require("./lib/html");
+const generate = HTML.generate;
+const card = HTML.card;
 
 const roles = ["Manager", "Engineer", "Intern"];
 const questions = [
-  { type: "input", name: "name", message: "name?" },
-  { type: "input", name: "id", message: "id?" },
-  { type: "input", name: "email", message: "email?" }
+  { type: "input", name: "name", message: "What is the employee's name?" },
+  { type: "input", name: "id", message: "What is the employee's ID?" },
+  { type: "input", name: "email", message: "What is the employee's email?" }
 ];
 
 async function app() {
@@ -19,27 +22,25 @@ async function app() {
     const { role } = await inquirer.prompt([{ type: "list", name: "role", message: "role?", choices: [...roles, "Exit"] }]);
     switch (role) {
       case "Manager":
-        const m = await inquirer.prompt([...questions, { type: "input", name: "office", message: "office?" }]);
-        employees.push(new Manager(m.name, m.id, m.email, m.office));
+        const manager = await inquirer.prompt([...questions, { type: "input", name: "office", message: "What is the manager's office number?" }]);
+        employees.push(new Manager(manager.name, manager.id, manager.email, manager.office));
         break;
       case "Engineer":
-        const e = await inquirer.prompt([...questions, { type: "input", name: "github", message: "github?" }]);
-        employees.push(new Engineer(e.name, e.id, e.email, e.github));
+        const engineer = await inquirer.prompt([...questions, { type: "input", name: "github", message: "What is the engineer's Github username?" }]);
+        employees.push(new Engineer(engineer.name, engineer.id, engineer.email, engineer.github));
         break;
       case "Intern":
-        const i = await inquirer.prompt([...questions, { type: "input", name: "school", message: "school?" }]);
-        employees.push(new Intern(i.name, i.id, i.email, i.school));
+        const intern = await inquirer.prompt([...questions, { type: "input", name: "school", message: "What is the intern's school name?" }]);
+        employees.push(new Intern(intern.name, intern.id, intern.email, intern.school));
         break;
       case "Exit":
         more = false;
         break;
     }
   }
-  console.log(employees);
-  //   const page = generate(employees);
-  //   fs.writeFile("employees.html", page, "utf8", () => {
-  //     console.log("created employees.html");
-  //   });
+
+  const cards = employees.map(employee => card(employee));
+  generate(cards.join(""));
 }
 
 app();
