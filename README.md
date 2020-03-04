@@ -12,5 +12,7 @@ This app can be downloaded or cloned locally so that you can run it as ```node a
 
 ![Employee Summary](./assets/screenshot.PNG)
 
-The dependencies are, [jest](https://jestjs.io/) for running the provided tests with ```npm test``` command, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
+The dependencies are:
+* [jest](https://jestjs.io/) for running the provided tests with ```npm test``` command
+* [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user
 
