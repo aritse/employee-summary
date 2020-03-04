@@ -11,9 +11,8 @@ When the user has completed building the team, the application creates an HTML f
 This app can be downloaded or cloned locally so that you can run it as ```node app.js```.
 
 ### Tools and concepts
-The dependencies are:
-* [jest](https://jestjs.io/) for running unit tests with `npm test` command
-* [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user on the command line
+* [Jest](https://jestjs.io/) for running unit tests with `npm test` command
+* [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user on the command line
 * Template engine and injection are demonstrated to render data
 * OOD, OOP, classes, constructors, inheritence, polymorphism, abstraction, accessiblity
 * Bootstrap CSS Framework for styling cards
