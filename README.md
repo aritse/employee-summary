@@ -8,7 +8,7 @@ In this application, I also demonstrate object oriented design (OOD). Concretely
 
 When the user has completed building the team, the application creates an HTML file that displays a nicely formatted team roster based on the information provided by the user. The `summary.html` is generated in the `output` folder.
 
-This app can be downloaded or cloned locally so that you can run it as ```node app.js```.
+This app can be downloaded or cloned locally so that you can run it as `node app.js`.
 
 ### Tools and concepts
 * [Jest](https://jestjs.io/) for running unit tests with `npm test` command
@@ -19,6 +19,10 @@ This app can be downloaded or cloned locally so that you can run it as ```node a
 * Node.JS and Node CLI
 * Async and await
 * Modularization and folder structure (test, lib, src)
+
+### Usage
+* `node app.js` to generate the summary
+* `npm run test` to execute unit tests
 
 
 ![Employee Summary](./assets/screenshot.PNG)
