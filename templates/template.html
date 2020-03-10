@@ -8,6 +8,17 @@
     <title>Employees</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("../assets/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .jumbotron {
+            background: none
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +27,7 @@
             <div class="col">
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1 class="display-4">Team Summary</h1>
+                        <h1 class="display-3 text-center font-weight-bold" style="color: #093d75;">Team Summary</h1>
                         <div class="card-deck">
                             ${cardDeck}
                         </div>
